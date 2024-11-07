@@ -1,0 +1,681 @@
+<scene version="2.1.0">
+
+<!-- Defaults, these can be set via the command line: -Darg=value -->
+
+
+<!-- Camera and Rendering Parameters -->
+
+	<integrator type="path" id="elm__0" name="elm__0">
+		<integer name="max_depth" value="12"/>
+	</integrator>
+
+<!-- Materials -->
+
+	<bsdf type="twosided" id="mat-itu_wood" name="mat-itu_wood">
+		<bsdf type="principled" name="bsdf">
+			<rgb value="0.678000 0.416000 0.188000" name="base_color"/>
+			<rgb value="1.000000 1.000000 1.000000" name="spec_tint"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.250000"/>
+			<float name="sheen" value="0.000000"/>
+			<rgb value="1.000000 1.000000 1.000000" name="sheen_tint"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.000900"/>
+			<float name="specular" value="0.500000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-itu_ceiling_board" name="mat-itu_ceiling_board">
+		<bsdf type="principled" name="bsdf">
+			<rgb value="0.800000 0.800000 0.800000" name="base_color"/>
+			<rgb value="1.000000 1.000000 1.000000" name="spec_tint"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.250000"/>
+			<float name="sheen" value="0.000000"/>
+			<rgb value="1.000000 1.000000 1.000000" name="sheen_tint"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.000900"/>
+			<float name="specular" value="0.500000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-itu_glass" name="mat-itu_glass">
+		<bsdf type="principled" name="bsdf">
+			<rgb value="0.678000 0.827000 0.886000" name="base_color"/>
+			<rgb value="1.000000 1.000000 1.000000" name="spec_tint"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.250000"/>
+			<float name="sheen" value="0.000000"/>
+			<rgb value="1.000000 1.000000 1.000000" name="sheen_tint"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.000900"/>
+			<float name="specular" value="0.500000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-itu_metal" name="mat-itu_metal">
+		<bsdf type="principled" name="bsdf">
+			<rgb value="0.106000 0.243000 0.627000" name="base_color"/>
+			<rgb value="1.000000 1.000000 1.000000" name="spec_tint"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.250000"/>
+			<float name="sheen" value="0.000000"/>
+			<rgb value="1.000000 1.000000 1.000000" name="sheen_tint"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.000900"/>
+			<float name="specular" value="0.500000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-itu_plasterboard" name="mat-itu_plasterboard">
+		<bsdf type="principled" name="bsdf">
+			<rgb value="0.871000 0.863000 0.875000" name="base_color"/>
+			<rgb value="1.000000 1.000000 1.000000" name="spec_tint"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.250000"/>
+			<float name="sheen" value="0.000000"/>
+			<rgb value="1.000000 1.000000 1.000000" name="sheen_tint"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.000900"/>
+			<float name="specular" value="0.500000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-itu_chipboard" name="mat-itu_chipboard">
+		<bsdf type="principled" name="bsdf">
+			<rgb value="0.878000 0.816000 0.624000" name="base_color"/>
+			<rgb value="1.000000 1.000000 1.000000" name="spec_tint"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.250000"/>
+			<float name="sheen" value="0.000000"/>
+			<rgb value="1.000000 1.000000 1.000000" name="sheen_tint"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.000900"/>
+			<float name="specular" value="0.500000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-ceramic" name="mat-ceramic">
+		<bsdf type="principled" name="bsdf">
+			<rgb value="1.000000 1.000000 1.000000" name="base_color"/>
+			<rgb value="1.000000 1.000000 1.000000" name="spec_tint"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.250000"/>
+			<float name="sheen" value="0.000000"/>
+			<rgb value="1.000000 1.000000 1.000000" name="sheen_tint"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.000900"/>
+			<float name="specular" value="0.500000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-polycarbonate" name="mat-polycarbonate">
+		<bsdf type="principled" name="bsdf">
+			<rgb value="0.702000 0.886000 0.769000" name="base_color"/>
+			<rgb value="1.000000 1.000000 1.000000" name="spec_tint"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.250000"/>
+			<float name="sheen" value="0.000000"/>
+			<rgb value="1.000000 1.000000 1.000000" name="sheen_tint"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.000900"/>
+			<float name="specular" value="0.500000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-plastic" name="mat-plastic">
+		<bsdf type="principled" name="bsdf">
+			<rgb value="0.200000 0.518000 0.208000" name="base_color"/>
+			<rgb value="1.000000 1.000000 1.000000" name="spec_tint"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.250000"/>
+			<float name="sheen" value="0.000000"/>
+			<rgb value="1.000000 1.000000 1.000000" name="sheen_tint"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.000900"/>
+			<float name="specular" value="0.500000"/>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="mat-cardboard" name="mat-cardboard">
+		<bsdf type="principled" name="bsdf">
+			<rgb value="0.756900 0.647000 0.502000" name="base_color"/>
+			<rgb value="1.000000 1.000000 1.000000" name="spec_tint"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.250000"/>
+			<float name="sheen" value="0.000000"/>
+			<rgb value="1.000000 1.000000 1.000000" name="sheen_tint"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.000900"/>
+			<float name="specular" value="0.500000"/>
+		</bsdf>
+	</bsdf>
+
+<!-- Emitters -->
+
+	<emitter type="constant" id="World" name="World">
+		<rgb value="1.000000 1.000000 1.000000" name="radiance"/>
+	</emitter>
+
+<!-- Shapes -->
+
+	<shape type="ply" id="mesh-Door" name="mesh-Door">
+		<string name="filename" value="meshes/Door.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Floor" name="mesh-Floor">
+		<string name="filename" value="meshes/Floor.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_ceiling_board" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Window_frames" name="mesh-Window_frames">
+		<string name="filename" value="meshes/Window_frames.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Windows" name="mesh-Windows">
+		<string name="filename" value="meshes/Windows.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Pipes" name="mesh-Pipes">
+		<string name="filename" value="meshes/Pipes.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Walls" name="mesh-Walls">
+		<string name="filename" value="meshes/Walls.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_plasterboard" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Station2" name="mesh-Station2">
+		<string name="filename" value="meshes/Station2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Desks2" name="mesh-Desks2">
+		<string name="filename" value="meshes/Desks2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_chipboard" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Station6" name="mesh-Station6">
+		<string name="filename" value="meshes/Station6.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Desks6" name="mesh-Desks6">
+		<string name="filename" value="meshes/Desks6.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_chipboard" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Station1" name="mesh-Station1">
+		<string name="filename" value="meshes/Station1.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Desks1" name="mesh-Desks1">
+		<string name="filename" value="meshes/Desks1.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_chipboard" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Station5" name="mesh-Station5">
+		<string name="filename" value="meshes/Station5.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Desks5" name="mesh-Desks5">
+		<string name="filename" value="meshes/Desks5.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_chipboard" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Station3" name="mesh-Station3">
+		<string name="filename" value="meshes/Station3.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Desks3" name="mesh-Desks3">
+		<string name="filename" value="meshes/Desks3.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_chipboard" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Station4" name="mesh-Station4">
+		<string name="filename" value="meshes/Station4.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Desks4" name="mesh-Desks4">
+		<string name="filename" value="meshes/Desks4.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_chipboard" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_leg7" name="mesh-Chair_leg7">
+		<string name="filename" value="meshes/Chair_leg7.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_wood7" name="mesh-Chair_wood7">
+		<string name="filename" value="meshes/Chair_wood7.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_leg3" name="mesh-Chair_leg3">
+		<string name="filename" value="meshes/Chair_leg3.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_wood3" name="mesh-Chair_wood3">
+		<string name="filename" value="meshes/Chair_wood3.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_leg12" name="mesh-Chair_leg12">
+		<string name="filename" value="meshes/Chair_leg12.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_wood12" name="mesh-Chair_wood12">
+		<string name="filename" value="meshes/Chair_wood12.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_leg8" name="mesh-Chair_leg8">
+		<string name="filename" value="meshes/Chair_leg8.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_wood8" name="mesh-Chair_wood8">
+		<string name="filename" value="meshes/Chair_wood8.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_leg4" name="mesh-Chair_leg4">
+		<string name="filename" value="meshes/Chair_leg4.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_wood4" name="mesh-Chair_wood4">
+		<string name="filename" value="meshes/Chair_wood4.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_leg13" name="mesh-Chair_leg13">
+		<string name="filename" value="meshes/Chair_leg13.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_wood13" name="mesh-Chair_wood13">
+		<string name="filename" value="meshes/Chair_wood13.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_leg1" name="mesh-Chair_leg1">
+		<string name="filename" value="meshes/Chair_leg1.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_wood1" name="mesh-Chair_wood1">
+		<string name="filename" value="meshes/Chair_wood1.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_leg9" name="mesh-Chair_leg9">
+		<string name="filename" value="meshes/Chair_leg9.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_wood9" name="mesh-Chair_wood9">
+		<string name="filename" value="meshes/Chair_wood9.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_leg5" name="mesh-Chair_leg5">
+		<string name="filename" value="meshes/Chair_leg5.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_wood5" name="mesh-Chair_wood5">
+		<string name="filename" value="meshes/Chair_wood5.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_leg14" name="mesh-Chair_leg14">
+		<string name="filename" value="meshes/Chair_leg14.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_wood14" name="mesh-Chair_wood14">
+		<string name="filename" value="meshes/Chair_wood14.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_leg10" name="mesh-Chair_leg10">
+		<string name="filename" value="meshes/Chair_leg10.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_wood10" name="mesh-Chair_wood10">
+		<string name="filename" value="meshes/Chair_wood10.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_leg6" name="mesh-Chair_leg6">
+		<string name="filename" value="meshes/Chair_leg6.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_wood6" name="mesh-Chair_wood6">
+		<string name="filename" value="meshes/Chair_wood6.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_leg2" name="mesh-Chair_leg2">
+		<string name="filename" value="meshes/Chair_leg2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_wood2" name="mesh-Chair_wood2">
+		<string name="filename" value="meshes/Chair_wood2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_leg11" name="mesh-Chair_leg11">
+		<string name="filename" value="meshes/Chair_leg11.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Chair_wood11" name="mesh-Chair_wood11">
+		<string name="filename" value="meshes/Chair_wood11.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Board1" name="mesh-Board1">
+		<string name="filename" value="meshes/Board1.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_chipboard" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Board2" name="mesh-Board2">
+		<string name="filename" value="meshes/Board2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_chipboard" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Planks1" name="mesh-Planks1">
+		<string name="filename" value="meshes/Planks1.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_chipboard" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Planks2" name="mesh-Planks2">
+		<string name="filename" value="meshes/Planks2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_chipboard" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Planks3" name="mesh-Planks3">
+		<string name="filename" value="meshes/Planks3.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_chipboard" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Rack1" name="mesh-Rack1">
+		<string name="filename" value="meshes/Rack1.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Rack2" name="mesh-Rack2">
+		<string name="filename" value="meshes/Rack2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Metal_box1" name="mesh-Metal_box1">
+		<string name="filename" value="meshes/Metal_box1.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Metal_box2" name="mesh-Metal_box2">
+		<string name="filename" value="meshes/Metal_box2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Vault" name="mesh-Vault">
+		<string name="filename" value="meshes/Vault.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Vault2" name="mesh-Vault2">
+		<string name="filename" value="meshes/Vault2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Electric" name="mesh-Electric">
+		<string name="filename" value="meshes/Electric.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Ladder" name="mesh-Ladder">
+		<string name="filename" value="meshes/Ladder.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Cabinet" name="mesh-Cabinet">
+		<string name="filename" value="meshes/Cabinet.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_wood" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Radiators" name="mesh-Radiators">
+		<string name="filename" value="meshes/Radiators.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Sink_metal" name="mesh-Sink_metal">
+		<string name="filename" value="meshes/Sink_metal.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Preheating" name="mesh-Preheating">
+		<string name="filename" value="meshes/Preheating.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Desoldering_station" name="mesh-Desoldering_station">
+		<string name="filename" value="meshes/Desoldering_station.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Desoldering_station2" name="mesh-Desoldering_station2">
+		<string name="filename" value="meshes/Desoldering_station2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Preheating2" name="mesh-Preheating2">
+		<string name="filename" value="meshes/Preheating2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Power_suply10" name="mesh-Power_suply10">
+		<string name="filename" value="meshes/Power_suply10.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Solder10" name="mesh-Solder10">
+		<string name="filename" value="meshes/Solder10.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Power_suply9" name="mesh-Power_suply9">
+		<string name="filename" value="meshes/Power_suply9.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Solder9" name="mesh-Solder9">
+		<string name="filename" value="meshes/Solder9.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Power_suply3" name="mesh-Power_suply3">
+		<string name="filename" value="meshes/Power_suply3.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Solder3" name="mesh-Solder3">
+		<string name="filename" value="meshes/Solder3.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Power_suply6" name="mesh-Power_suply6">
+		<string name="filename" value="meshes/Power_suply6.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Solder6" name="mesh-Solder6">
+		<string name="filename" value="meshes/Solder6.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Power_suply11" name="mesh-Power_suply11">
+		<string name="filename" value="meshes/Power_suply11.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Solder11" name="mesh-Solder11">
+		<string name="filename" value="meshes/Solder11.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Power_suply1" name="mesh-Power_suply1">
+		<string name="filename" value="meshes/Power_suply1.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Solder1" name="mesh-Solder1">
+		<string name="filename" value="meshes/Solder1.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Power_suply4" name="mesh-Power_suply4">
+		<string name="filename" value="meshes/Power_suply4.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Solder4" name="mesh-Solder4">
+		<string name="filename" value="meshes/Solder4.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Power_suply7" name="mesh-Power_suply7">
+		<string name="filename" value="meshes/Power_suply7.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Solder7" name="mesh-Solder7">
+		<string name="filename" value="meshes/Solder7.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Power_suply12" name="mesh-Power_suply12">
+		<string name="filename" value="meshes/Power_suply12.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Power_suply13" name="mesh-Power_suply13">
+		<string name="filename" value="meshes/Power_suply13.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Solder12" name="mesh-Solder12">
+		<string name="filename" value="meshes/Solder12.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Power_suply2" name="mesh-Power_suply2">
+		<string name="filename" value="meshes/Power_suply2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Solder2" name="mesh-Solder2">
+		<string name="filename" value="meshes/Solder2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Power_suply5" name="mesh-Power_suply5">
+		<string name="filename" value="meshes/Power_suply5.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Solder5" name="mesh-Solder5">
+		<string name="filename" value="meshes/Solder5.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Power_suply8" name="mesh-Power_suply8">
+		<string name="filename" value="meshes/Power_suply8.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Solder8" name="mesh-Solder8">
+		<string name="filename" value="meshes/Solder8.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Wooden_board" name="mesh-Wooden_board">
+		<string name="filename" value="meshes/Wooden_board.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_chipboard" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Control" name="mesh-Control">
+		<string name="filename" value="meshes/Control.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Torus" name="mesh-Torus">
+		<string name="filename" value="meshes/Torus.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Laser_LPKF" name="mesh-Laser_LPKF">
+		<string name="filename" value="meshes/Laser_LPKF.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Antenna" name="mesh-Antenna">
+		<string name="filename" value="meshes/Antenna.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Optic_glass" name="mesh-Optic_glass">
+		<string name="filename" value="meshes/Optic_glass.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Ceramic_parts" name="mesh-Ceramic_parts">
+		<string name="filename" value="meshes/Ceramic_parts.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-ceramic" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Polycarbonate_parts" name="mesh-Polycarbonate_parts">
+		<string name="filename" value="meshes/Polycarbonate_parts.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-polycarbonate" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Plastic_parts" name="mesh-Plastic_parts">
+		<string name="filename" value="meshes/Plastic_parts.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-plastic" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Paper_boxes" name="mesh-Paper_boxes">
+		<string name="filename" value="meshes/Paper_boxes.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-cardboard" name="bsdf"/>
+	</shape>
+
+<!-- Volumes -->
+
+</scene>
