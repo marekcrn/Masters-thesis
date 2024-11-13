@@ -1,0 +1,23 @@
+<scene version="2.1.0">
+
+<!-- Defaults, these can be set via the command line: -Darg=value -->
+
+
+<!-- Camera and Rendering Parameters -->
+
+	<integrator type="path" id="elm__0" name="elm__0">
+		<integer name="max_depth" value="12"/>
+	</integrator>
+
+<!-- Materials -->
+
+
+<!-- Emitters -->
+
+
+<!-- Shapes -->
+
+
+<!-- Volumes -->
+
+</scene>
