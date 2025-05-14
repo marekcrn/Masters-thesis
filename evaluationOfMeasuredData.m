@@ -23,7 +23,7 @@ for i = 31 %1:moznosti
     end
     
     filename_rx = sprintf('data/measure_20_2_2025/LOS/data_rx_%d.mat', i); 
-    %filename_rx = sprintf('data/measure_20_2_2025/NLOS_directional/data_rx_%d.mat', i);
+    %filename_rx = sprintf('data/measure_20_2_2025/NLOS/data_rx_%d.mat', i);
     %filename_rx = sprintf('data/measure_20_2_2025/NLOS_omni/data_rx_%d.mat', i);
     load(filename_rx); 
     filename_tx = sprintf('data/tx_data/sig_tx_%d.mat', i); 
@@ -235,7 +235,7 @@ for i = 31 %1:moznosti
 
     TX_direction(ix) = smer(ix);
     Estimated_direction(ix) = I;
-    Evaluation(ix) =eval; %logical([eval]);
+    Evaluation(ix) =eval; 
     Power_RSRP_dBm(ix) = RSRP_dBm;
 end
 %%

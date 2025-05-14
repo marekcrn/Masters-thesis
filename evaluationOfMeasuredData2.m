@@ -6,12 +6,12 @@ Mtotal=4267;
 Mdata=240;
 Mdc=0;
 Ncp=0;
-Nsym = 600; % OFDM symbolu ve 20 ms, tj SSburst v max 5 ms + doplneno nulama
+Nsym = 600; 
 fmezinos = 120e3;
 fs = 512e6;
 delka = 0.0200015625/4;
-moznosti = 63;
-smer = 1:moznosti;
+angles = 63;
+smer = 1:angles;
 
 %filename_tx = sprintf('data/tx_data/sig_tx_BFK_RX_state.mat');
 filename_tx = sprintf('data/tx_data/sig_tx_final_09052025.mat');
@@ -67,7 +67,7 @@ colormap jet;
 clim([0 1])
 colorbar;
 
-for i = 31%1:moznosti
+for i = 31%1:angles
     disp("Nacitam soubor data_rx_" + i);
     if i > 1
         clear data sig_rx
@@ -79,9 +79,9 @@ for i = 31%1:moznosti
 
     %% time
     t = 0:1/fs:delka*4-(1/fs); % s
-    t = t*1000; % prevod na ms
+    t = t*1000; % ms
 
-    %% zobrazeni prijateho signalu
+    %% display of received signal
     figure(5)
     %subplot(7,10,i)
     plot(t, abs(sig_rx))
@@ -91,32 +91,29 @@ for i = 31%1:moznosti
     title('SS burst in time domain RX', 'FontSize', 35);
     xlim([0 20])
 
-    %% kompenzace f offsetu
-    %best_distances = inf(1,32);
+    %% compensation of f offset
     best_distances = inf(240,32);
     krok_fo = 1;
     for fo = -37e3:50:-33e3
-        % frekvenční posun o x Hz
-        % Parametry
-        fshift = fo;      % frekvenční offset (Hz)
-        fs = 512e6;        % vzorkovací frekvence
-        T = 1/fs;          % perioda vzorku
-        L = length(sig_rx);% celkový počet vzorků
+        % frequency shift by x Hz
+        % Parametres
+        fshift = fo;      % frequency offset (Hz)
+        fs = 512e6;        % sampling frequency
+        T = 1/fs;          % period
+        L = length(sig_rx);% number of samples
 
-        % Velikost bloku
+        % Block size
         block_size = 1e6;
 
-        % Blokové zpracování
+        % Block processing
         for i_block = 1:block_size:L
             i_end = min(i_block + block_size - 1, L);
-            n = (i_block-1):(i_end-1);                   % indexy v rámci celého signálu
-            t_block = n * T;                           % časové značky
+            n = (i_block-1):(i_end-1);                   % indices within the entire signal
+            t_block = n * T;                             % time stamps
             sig_rx(i_block:i_end) = sig_rx(i_block:i_end) .* exp(1i * 2 * pi * fshift * t_block);
         end
 
-        %% synchronizace
-        % prijmout nekolik repetic celeho signalu (cely signal je 20 ms)
-        % zasynchronizovat se na začátek, vyseknout 20 ms a potom demodulovat
+        %% synchronization
         [korelace, lags] = xcorr(abs(sig_rx), abs(sig_tx));
 
         % figure(6);
@@ -126,7 +123,7 @@ for i = 31%1:moznosti
         % ylabel('corelation');
         % title('Corelation of transmitted and recieved signal');
 
-        %zde vytahnout z sig_rx zpet puvodni delku pro 5 ms
+        %extract the original length for 5 ms from sig_rx
         [M, I] = max(korelace);
         k = 0;
 
@@ -136,8 +133,8 @@ for i = 31%1:moznosti
             I = I + length(sig_tx);
         end
 
-        sig_rx = [sig_rx(lags(I)+1+k:end)]; % vyseknuti synchronizovaného okna
-        sig_rx = sig_rx/max(abs(sig_rx)); % normalizace
+        sig_rx = [sig_rx(lags(I)+1+k:end)]; % cut out the synchronized window
+        sig_rx = sig_rx/max(abs(sig_rx)); % normalization
 
         % figure(7)
         % plot(abs(sig_rx))
@@ -145,7 +142,7 @@ for i = 31%1:moznosti
         % ylabel('amp');
         % title('Synchronized SS burst in time domain RX');
 
-        %% srovnani synchronizace
+        %% synchronization comparison
         % figure(8);
         % %subplot(12,10,i)
         % plot(abs(sig_rx));
@@ -165,11 +162,11 @@ for i = 31%1:moznosti
         %% demodulator
         [M5_RX] = OFDM_demodulator(sig_rx, Mtotal, Mdata, Mdc, Ncp, Nsym);
 
-        K = 2; %konstanta pro přeskládaní ve spektru
+        K = 2; %constant for rearrangement in the spectrum
         a_RX = (floor(size(M5_RX, 1)/2+1)-240/2)-Mdc+K;
         b_RX = (floor(size(M5_RX, 1)/2)+240/2)+Mdc+K;
 
-        %% fftshift - otocení spektra zpět, aby bylo symetrické kolem nuly
+        %% fftshift - rotate the spectrum back to make it symmetrical around zero
         M6_RX = fftshift(M5_RX, 1);
 
         % figure(11)
@@ -182,8 +179,8 @@ for i = 31%1:moznosti
         % colormap jet;
         % colorbar;
 
-        %% dekodovani smeru
-        M7_RX = M6_RX(a_RX:b_RX,1:600); %detail oblasti, kde je SSBurst
+        %% direction decoding
+        M7_RX = M6_RX(a_RX:b_RX,1:600); %detail of the area where SSBurst is
         M7_RX = [M7_RX(1:120,:); M7_RX(120+2*Mdc+1:end,:)];
 
         % figure(12)
@@ -196,7 +193,7 @@ for i = 31%1:moznosti
         % colorbar;
 
         %% Reference Signal Received Power (RSRP)
-        % naskladam za sebe 8 SSBlock symbolu a spocitam pro ne RSRP
+        % stack 8 SSBlock symbols behind and calculate the RSRP for them
         M9_RX = M7_RX(:,[4:11, 16:23, 32:39, 44:51]);% M7_RX(:,5);
 
         % figure(13)
@@ -298,7 +295,6 @@ end
 
 TX_direction = TX_direction';
 RP_RSRP_dBm = Power_RSRP_dBm';
-% RP_RSRP_dBm = RP_RSRP_dBm/max(RP_RSRP_dBm); % normalizace
 T = table(TX_direction, RP_RSRP_dBm);
 
 BER = sortrows(BER, 1);
