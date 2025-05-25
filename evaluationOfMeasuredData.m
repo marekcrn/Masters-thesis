@@ -16,7 +16,7 @@ moznosti = 240/nulove_sub;
 smer = 1:moznosti;
 s = 0; % pro subplot srovnani amplitudy + faze
 
-for i = 31 %1:moznosti
+for i = 10 %1:moznosti
     disp("Nacitam soubor data_rx_" + i);
     if i > 1
         clear data sig_rx sig_tx
@@ -67,6 +67,7 @@ for i = 31 %1:moznosti
     colorbar;
 
     M9_TX = M7_TX(:,[4:11, 16:23, 32:39, 44:51]);
+    M9_TX = M9_TX/max(max(abs(M9_TX)));
     M9_TX = round(M9_TX,3);
 
     figure(4)
@@ -113,9 +114,6 @@ for i = 31 %1:moznosti
     % sig_rx = [sig_rx(lags(I)+1+k:lags(I)+k+length(sig_tx))]; vyseknuti 20ms
     % okna
     sig_rx = [sig_rx(lags(I)+1+k:end)]; % vyseknuti synchronizovaného okna od
-    % začátku synchronizace až do konce, kvůli přítomnosti CP
-
-    %sig_rx = sig_rx/max(abs(sig_rx)); % normalizace
 
     %% srovnani synchronizace
     % s = s + 1;
@@ -208,6 +206,8 @@ for i = 31 %1:moznosti
     %% Reference Signal Received Power (RSRP)
     % naskladam za sebe 8 SSBlock symbolu a spocitam pro ne RSRP
     M9 = M7(:,[4:11, 16:23, 32:39, 44:51]);% M7(:,5);
+    M9 = M9/max(max(abs(M9))); % normalization 
+
     figure(10)
     %subplot(6,10,i)
     imagesc((abs(M9)));
